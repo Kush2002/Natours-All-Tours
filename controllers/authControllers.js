@@ -39,7 +39,7 @@ const createSendToken = (user, statusCode, res) => {
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
   const url = `http://127.0.0.1:3000/me`;
-  console.log(url);
+  // console.log(url);
   await new Email(newUser,url).sendWelcome();
   createSendToken(newUser, 201, res);
 });
@@ -172,14 +172,14 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   // 3) Send it to user's email
   try {
     const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
-    console.log(resetURL);
+    // console.log(resetURL);
     await new Email(user, resetURL).sendPasswordReset();
     res.status(200).json({
       status: 'success',
       message: 'Token sent to email!'
     });
   } catch (err) {
-    console.log(err)
+    // console.log(err)
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });

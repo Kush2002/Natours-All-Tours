@@ -6992,7 +6992,7 @@ function forEach(obj, fn) {
  *
  * ```js
  * var result = merge({foo: 123}, {foo: 456});
- * console.log(result.foo); // outputs 456
+ * // console.log(result.foo); // outputs 456
  * ```
  *
  * @param {Object} obj1 Object to merge
@@ -11172,7 +11172,7 @@ var logout = exports.logout = /*#__PURE__*/function () {
         case 7:
           _context2.prev = 7;
           _context2.t0 = _context2["catch"](0);
-          console.log(_context2.t0.response);
+          // console.log(_context2.t0.response);
           (0, _alerts.showAlert)('error', 'Error logging out! Try again.');
         case 11:
         case "end":
@@ -11385,7 +11385,7 @@ var userPasswordForm = document.querySelector('.form-user-password');
 if (mapBox) {
   var locations = JSON.parse(mapBox.dataset.locations);
   (0, _mapbox.displayMap)(locations);
-  //   console.log(locations)
+  //   // console.log(locations)
 }
 if (loginForm) loginForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -11400,7 +11400,7 @@ if (userDataForm) userDataForm.addEventListener('submit', function (e) {
   form.append('name', document.getElementById('name').value);
   form.append('email', document.getElementById('email').value);
   form.append('photo', document.getElementById('photo').files[0]);
-  console.log(form);
+  // console.log(form);
   (0, _updateSettings.updateSettings)(form, 'data');
 });
 if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {
@@ -11500,7 +11500,7 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
       };
     }
     if (data.type === 'error-resolved') {
-      console.log('[parcel] ✨ Error resolved');
+      // console.log('[parcel] ✨ Error resolved');
       removeErrorOverlay();
     }
     if (data.type === 'error') {

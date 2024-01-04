@@ -9,7 +9,7 @@ const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewsRouter');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
-
+const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongooseSanitize = require('express-mongo-sanitize');
@@ -66,6 +66,7 @@ app.use(hpp({
   ]}
 ));
 
+app.use(compression());
 // Test Middleware Here
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
